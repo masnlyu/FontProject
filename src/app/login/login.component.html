@@ -1,0 +1,32 @@
+<div class=" row justify-content-center">
+  <form class="col-3 item-light login-form" [formGroup]="invalidForm">
+    <h4>我的登入</h4>
+    <div class="px-4 text-start">
+      <div class="d-flex">
+        <label for="account"><span class="text-danger">*</span>帳號:</label>
+        <div class="m-0">
+          <input type="text" id="account" name="account" formControlName="account">
+          <p *ngIf="!invalidForm.controls['account'].pristine &&
+          invalidForm.controls['account'].errors?.['required']" class=" m-0 text-danger">帳號必填</p>
+          <p *ngIf="!invalidForm.controls['account'].pristine &&
+          invalidForm.controls['account'].hasError('minlength')" class=" m-0 text-danger">帳號必須高於4個字元</p>
+          <p *ngIf="!invalidForm.controls['account'].pristine &&
+          invalidForm.controls['account'].hasError('maxlength')" class="m-0 text-danger">帳號不得高於20字元</p>
+        </div>
+      </div>
+      <div class="d-flex">
+        <label for="password"><span class="text-danger">*</span>密碼:</label>
+        <div>
+          <input type="password" id="password" name="password" formControlName="password">
+          <p *ngIf="!invalidForm.controls['password'].pristine &&
+          invalidForm.controls['password'].errors?.['required']" class="m-0 text-danger">密碼必填</p>
+          <p *ngIf="!invalidForm.controls['password'].pristine &&
+          invalidForm.controls['password'].hasError('minlength')" class=" m-0 text-danger">密碼必須高於4個字元</p>
+          <p *ngIf="!invalidForm.controls['password'].pristine &&
+          invalidForm.controls['password'].hasError('maxlength')" class="m-0 text-danger">密碼不得高於20字</p>
+        </div>
+      </div>
+    </div>
+    <input type="submit" class="btn btn-success" value="登入" [disabled]="invalidForm['invalid']" (click)="login()">
+  </form>
+</div>

@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+$my-bg-dark: #262626;
+$my-bg-light: #f3f3f3;
+$my-item-light: #f9f9f9;
+$my-item-white: #ffffff;
+$my-text-theme-color: #363993;
+$my-text-light-color:#637282;
+body {
+  // background-color: $my-bg-light;
+
+  .item-light {
+    box-shadow: -5px 0px 20px 0px rgba(51, 51, 102, 0.15);
+    background-color: $my-item-light;
+    border-radius: 5px;
+  }
+
+  .item-white {
+    box-shadow: -5px 0px 20px 0px rgba(51, 51, 102, 0.25);
+    background-color: $my-item-white;
+    border-radius: 5px;
+  }
+
+  .text-theme-color {
+    color: $my-text-theme-color;
+  }
+  .text-light-color{
+    color: $my-text-light-color;
+  }
+
+}
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+
+

@@ -1,0 +1,17 @@
+$my-bg-dark:#262626;
+$my-bg-light:#f3f3f3;
+$my-item-bg:#f9f9f9;
+$my-text-theme-color:#1e205a;
+
+
+.login-form{
+  padding: 20px;
+  text-align: center;
+  color: $my-text-theme-color;
+  h4,div{
+    margin-bottom: 10px;
+  }
+  h4,label{
+    font-weight: bold;
+  }
+}

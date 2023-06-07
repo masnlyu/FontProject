@@ -1,0 +1,6 @@
+bit是什麼
+STATES無異議 資料庫
+資料防呆
+正規化
+count(1)count(欄位)count(*)
+(insert select)  查詢不要太多 把它合併

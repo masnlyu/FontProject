@@ -1,0 +1,12 @@
+<div class="row justify-content-center" *ngIf="article">
+  <div class="col-xl-9 col-12  mb-3">
+    <div class="item-white p-3 ">
+      <h2 class="text-theme-color">{{article.title}}</h2>
+      <p>作者: <a href="#">{{article.name}}</a><span class="ms-3">建立時間:{{article.createTime+'z' |
+          date:'yyyy-MM-dd&ensp;HH:mm:ss':'UTC+8'}}</span>
+      </p>
+      <img [src]="article.imgBase64" class="articleImg">
+      <pre [innerText]="article.content" class="articleContent"></pre>
+    </div>
+  </div>
+</div>

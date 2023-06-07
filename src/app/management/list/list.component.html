@@ -1,0 +1,54 @@
+<div class="">
+  <div class="p-3 text-end"><a class="pe-3 btn btn-outline-primary" routerLink="../create">新增</a></div>
+  <div>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th class="col-1">圖片</th>
+          <th class="col-2">標題</th>
+          <th class="col-4">內容</th>
+          <th class="col-2">創建時間</th>
+          <th class="col-2">操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let article of articles">
+          <td><img [src]=article.imgBase64 class="w-100"></td>
+          <td>{{article.title}}</td>
+          <td>{{article.content}}</td>
+          <td>{{article.createTime+'z'|date:'yyyy-MM-dd HH:mm:ss':'UTC+8'}}</td>
+          <td><a class="btn btn-outline-success me-2" routerLink="../edit/{{article.id}}">編輯</a>
+            <a class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal"
+              (click)="clickDeleteConfirm(article)">刪除</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <ngb-pagination class="d-flex justify-content-center mt-3" [collectionSize]="ArticlesPageFillter.collectionSize"
+      [(page)]="ArticlesPageFillter.nowPage" [pageSize]="ArticlesPageFillter.pageSize"
+      (pageChange)="getArticlesForUser()">
+      <ng-template ngbPaginationPrevious>上一篇</ng-template>
+      <ng-template ngbPaginationNext>下一篇</ng-template>
+    </ngb-pagination>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">確定刪除?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        {{selectedArticle.title}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
+          (click)="onClickDelete(selectedArticle.id)">確認</button>
+      </div>
+    </div>
+  </div>
+</div>

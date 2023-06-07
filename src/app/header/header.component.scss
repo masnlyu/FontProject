@@ -1,0 +1,35 @@
+$my-bg-dark: #262626;
+$my-bg-light: #f3f3f3;
+$my-item-bg: #f9f9f9;
+$my-text-theme-color: #1e205a;
+$my-text-white-color: #fff;
+
+nav {
+  background-color: $my-bg-dark !important;
+  position: fixed !important;
+  width: 100% !important;
+  z-index: 999;
+
+
+  .container {
+
+    .myLogo,
+    .nav-link {
+      color: $my-text-white-color;
+      font-weight: bold;
+    }
+
+    .nav-link {
+      font-size: 1.2rem;
+    }
+
+    .nav-link:hover,
+    .myLogo:hover {
+      color: #0d6efd;
+    }
+  }
+}
+
+.active-link {
+  color: #0d6efd !important;
+}
